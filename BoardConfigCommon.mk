@@ -166,7 +166,8 @@ BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 # RIL
 BOARD_VENDOR := samsung
 BOARD_MODEM_TYPE := ss333
-BOARD_PROVIDES_LIBRIL := true
+BOARD_PROVIDES_LIBRIL := false
+BOARD_PROVIDES_LIBRIL_VENDOR_INCLUDES := true
 
 # RIL.java overwrite
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
