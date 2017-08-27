@@ -123,6 +123,15 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     libbt-vendor
 
+# Camera
+PRODUCT_PACKAGES += \
+    camera.exynos5 \
+    libexynoscamera_shim \
+    Snap \
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl
+
 # Radio
 PRODUCT_PACKAGES += \
     libxml2 \
