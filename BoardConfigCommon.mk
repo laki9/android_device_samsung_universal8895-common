@@ -109,6 +109,9 @@ TARGET_USES_GRALLOC1_ADAPTER := true
 # ION
 TARGET_USES_ION := true
 
+# GPS-shims
+TARGET_LD_SHIM_LIBS += \
+	/system/bin/gpsd|/vendor/lib64/gpsd_shim.so
 
 # Renderscript
 BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53.a57
