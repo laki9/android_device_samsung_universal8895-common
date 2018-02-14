@@ -283,6 +283,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
+# Skeletons
+PRODUCT_PACKAGES += \
+	android.hidl.base@1.0
+
 # Treble_omx
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false 
