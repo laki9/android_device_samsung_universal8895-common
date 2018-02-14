@@ -296,6 +296,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false 
 
+# Skeletons
+PRODUCT_PACKAGES += \
+	android.hidl.base@1.0
+
 # System properties
 include $(LOCAL_PATH)/system_prop.mk
 
