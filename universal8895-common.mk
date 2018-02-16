@@ -275,6 +275,10 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     lineage_charger_res_images
 
+# Stagefright-shims
+PRODUCT_PACKAGES += \
+	libstagefright_shim
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service \
