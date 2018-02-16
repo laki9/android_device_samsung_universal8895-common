@@ -163,15 +163,6 @@ GREEN_LED_PATH := "/sys/class/leds/led_g/brightness"
 BLUE_LED_PATH := "/sys/class/leds/led_b/brightness"
 BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 
-# RIL
-BOARD_VENDOR := samsung
-BOARD_MODEM_TYPE := ss333
-BOARD_PROVIDES_LIBRIL := false
-BOARD_PROVIDES_LIBRIL_VENDOR_INCLUDES := true
-
-# RIL.java overwrite
-BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
-
 # Boot animation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
