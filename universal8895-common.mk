@@ -110,7 +110,7 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service 
+    android.hardware.drm@1.0-service
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -126,6 +126,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.exynos5 \
     libexynoscamera_shim \
+    libstagefright_shim \
     Snap \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
