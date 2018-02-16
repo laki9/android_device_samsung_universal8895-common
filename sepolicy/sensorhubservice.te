@@ -1,7 +1,5 @@
 #### sensorhubservice
 #
-# sensorhub
-type sensorhub_service, service_manager_type;
 type sensorhubservice, domain;
 type sensorhubservice_exec, exec_type, file_type;
 type sensorhubservice_service, app_api_service, system_server_service, service_manager_type;

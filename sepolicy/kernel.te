@@ -1,4 +1,3 @@
-# allow kernel self:capability { dac_override chown mknod };
 allow kernel self:capability { chown mknod };
 
 # /dev/mbin0
