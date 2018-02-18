@@ -101,7 +101,8 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     memtrack.exynos5 \
     libhwc2on1adapter \
-    libprocname
+    libprocname \
+    libui_shim
 
 # hardware/samsung/AdvancedDisplay (MDNIE)
 #PRODUCT_PACKAGES += \
