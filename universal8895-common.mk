@@ -102,7 +102,11 @@ PRODUCT_PACKAGES += \
     memtrack.exynos5 \
     libhwc2on1adapter \
     libprocname \
-    libui_shim
+    libui_shim \
+    libExynosOMX_shim
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc   
 
 # hardware/samsung/AdvancedDisplay (MDNIE)
 #PRODUCT_PACKAGES += \
