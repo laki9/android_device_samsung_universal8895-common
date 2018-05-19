@@ -143,6 +143,11 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl.exynos8895 \
+    android.hardware.gnss@1.0-service
+
+# GPS SHIM
+PRODUCT_PACKAGES += \
     gpsd_shim
 
 PRODUCT_PACKAGES += \
