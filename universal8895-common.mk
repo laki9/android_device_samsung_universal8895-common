@@ -128,6 +128,12 @@ PRODUCT_PACKAGES += \
     libxml2 \
     libprotobuf-cpp-full
 
+# Fingerprint
+    fingerprint.exynos5 \
+    libbauthserver_shim \
+    android.hardware.biometrics.fingerprint@2.1-impl \
+    android.hardware.biometrics.fingerprint@2.1-service
+
 PRODUCT_PACKAGES += \
     libsecril-client \
     libsecril-client-sap \
@@ -253,13 +259,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lights.universal8895 \
     android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service 
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    fingerprint.exynos5 \
-    libbauthtzcommon_shim \
-    android.hardware.biometrics.fingerprint@2.1-service
+    android.hardware.light@2.0-service
 
 # Offmode charger
 PRODUCT_PACKAGES += \

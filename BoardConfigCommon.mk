@@ -214,6 +214,10 @@ TARGET_LD_SHIM_LIBS += \
 	/system/lib/omx/libOMX.Exynos.WMV.Decoder.so|/vendor/lib/libui_shim.so \
 	/system/lib64/omx/libOMX.Exynos.WMV.Decoder.so|/vendor/lib64/libui_shim.so
 
+# Fingerprint-shims
+TARGET_LD_SHIM_LIBS += \
+       /system/lib64/libbauthserver.so|/system/lib64/libbauthserver_shim.so
+
 # TWRP
 ifeq ($(RECOVERY_VARIANT),twrp)
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/twrp.fstab
