@@ -2655,12 +2655,9 @@ typedef struct {
  *  INVALID_CALL_ID
  *  INVALID_ARGUMENTS
  *  OPERATION_NOT_ALLOWED
-<<<<<<< HEAD
-=======
  *  NO_RESOURCES
  *  CANCELLED
  *  REQUEST_NOT_SUPPORTED
->>>>>>> f061fdf... universal7880: Bring up radio for Oreo
  */
 #define RIL_REQUEST_CONFERENCE 16
 
@@ -6538,12 +6535,6 @@ typedef struct {
   *  REQUEST_NOT_SUPPORTED
   *  SIM_ABSENT
   *  INVALID_ARGUMENTS
-<<<<<<< HEAD
-  */
-#define RIL_REQUEST_SET_SIM_CARD_POWER 140
-/***********************************************************************/
-
-=======
   *  INTERNAL_ERR
   *  NO_MEMORY
   *  NO_RESOURCES
@@ -6666,7 +6657,6 @@ typedef struct {
 /**********************************************************
  * SAMSUNG REQUESTS
  **********************************************************/
->>>>>>> f061fdf... universal7880: Bring up radio for Oreo
 /*
  * You normally find these constants if you decompile RILConstants.class in
  * framework2.odex.
@@ -7398,8 +7388,6 @@ typedef struct {
   * framework.
   */
 #define RIL_UNSOL_MODEM_RESTART 1047
-<<<<<<< HEAD
-=======
 
 /**
  * RIL_UNSOL_CARRIER_INFO_IMSI_ENCRYPTION
@@ -7480,7 +7468,6 @@ typedef struct {
 #define RIL_UNSOL_RMTUIM_CARD_POWER_DOWN 11074
 #define RIL_UNSOL_RMTUIM_CARD_RESET 11075
 #define RIL_UNSOL_TURN_RADIO_ON 11076
->>>>>>> f061fdf... universal7880: Bring up radio for Oreo
 
 /***********************************************************************/
 
@@ -7593,11 +7580,8 @@ typedef struct {
                                    (None: 0, PAP: 1, CHAP: 2, PAP&CHAP: 3) */
     char *username;             /* the username for APN, or NULL */
     char *password;             /* the password for APN, or NULL */
-<<<<<<< HEAD
-=======
     char *roamingProtocol;
     int imsType;
->>>>>>> f061fdf... universal7880: Bring up radio for Oreo
 } RIL_InitialAttachApn;
 
 typedef struct {
