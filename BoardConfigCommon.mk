@@ -183,7 +183,7 @@ TARGET_SYSTEM_PROP := device/samsung/universal8895-common/system.prop
 TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
 # Recovery
-#RECOVERY_VARIANT := twrp
+RECOVERY_VARIANT := twrp
 BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.samsungexynos8895
 
