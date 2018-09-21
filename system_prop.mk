@@ -85,7 +85,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/lib64/libsec-ril.so \
     rild.libpath2=/system/lib64/libsec-ril-dsds.so \
     ro.telephony.default_network=9 \
-    ro.telephony.ril_class=SlteRIL \
     ro.ril.gprsclass=10 \
     ro.ril.hsxpa=1 \
     ro.ril.telephony.mqanelements=6 \
@@ -100,7 +99,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Usb (temp)
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb
-
-# sdcardfs
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.sdcardfs=false
