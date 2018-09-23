@@ -232,3 +232,10 @@ BOARD_SECCOMP_POLICY += $(LOCAL_PATH)/seccomp
 
 # SELinux
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
+
+# Shim
+TARGET_LD_SHIM_LIBS += \
+    /system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
+    /system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so \
+    /system/lib64/hw/fingerprint.vendor.exynos5.so|/vendor/lib64/libbauthtzcommon_shim.so \
+    /system/bin/gpsd|/vendor/lib64/gpsd_shim.so
