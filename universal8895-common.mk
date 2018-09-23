@@ -29,7 +29,6 @@ PRODUCT_PACKAGES += \
     init.baseband.rc \
     init.bluetooth.rc \
     init.gps.rc \
-    init.power.rc \
     init.rilchip.rc \
     init.rilcommon.rc \
     init.samsung.rc \
