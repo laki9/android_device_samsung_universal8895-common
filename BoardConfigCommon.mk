@@ -238,6 +238,6 @@ TARGET_LD_SHIM_LIBS += \
     /system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
     /system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so \
     /system/lib64/hw/fingerprint.vendor.exynos5.so|/vendor/lib64/libbauthtzcommon_shim.so \
-    /system/bin/gpsd|/vendor/lib64/gpsd_shim.so \
+    /system/bin/gpsd|/vendor/lib64/libsensor_shim.so \
     /system/lib64/libstagefright.so|/vendor/lib64/libstagefright_shim.so \
     /system/lib/libstagefright.so|/vendor/lib/libstagefright_shim.so

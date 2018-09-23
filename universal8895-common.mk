@@ -224,7 +224,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/lhd.conf:system/etc/lhd.conf
 
 PRODUCT_PACKAGES += \
-    gpsd_shim
+    glibsensor_shim
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
