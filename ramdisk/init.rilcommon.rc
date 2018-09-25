@@ -11,4 +11,3 @@ import /init.rilchip.rc
 
 # for Wi-Fi only models
 on property:ro.radio.noril=yes
-    stop ril-daemon

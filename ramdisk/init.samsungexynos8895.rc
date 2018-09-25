@@ -892,12 +892,6 @@ service lpm /system/bin/lpm
     class sec-charger
     critical
 
-# Sensorhub service
-service sensorhubservice /system/bin/sensorhubservice
-    class main
-    user system
-    group input
-
 # SENSOR FRAMEWORK : starts fingerprintService for CPID nonTZ
 service vcsFPService /system/bin/vcsFPService
     class late_start
