@@ -51,9 +51,6 @@
 /dev/batch_io                u:object_r:sensor_device:s0
 /dev/ssp_sensorhub           u:object_r:sensor_device:s0
 
-# Knox status
-/dev/knox_kap                u:object_r:knox_device:s0
-
 ####################################
 # efs files
 /efs/FactoryApp(/.*)?        u:object_r:app_efs_file:s0
