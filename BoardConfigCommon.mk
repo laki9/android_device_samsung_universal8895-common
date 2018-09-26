@@ -227,6 +227,11 @@ TARGET_SEC_FP_HAL_VARIANT := bauth
 # Usb
 TARGET_USES_LEGACY_ADB_INTERFACE := true
 
+#
+# Security
+#
+BOARD_USES_TRUST_KEYMASTER := true
+
 # Seccomp filters
 BOARD_SECCOMP_POLICY += $(LOCAL_PATH)/seccomp
 
