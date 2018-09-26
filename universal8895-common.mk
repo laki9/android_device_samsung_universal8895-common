@@ -94,10 +94,16 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.configstore@1.0-service \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     libhwc2on1adapter
+    
+#
+# Configstore
+#
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.0-impl \
+    android.hardware.configstore@1.0-service \
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -120,6 +126,7 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
 # Camera
@@ -130,12 +137,22 @@ PRODUCT_PACKAGES += \
     Snap \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service
 
 # Radio
 PRODUCT_PACKAGES += \
     libxml2 \
-    libprotobuf-cpp-full
+    libprotobuf-cpp-full \
+    rild \
+    libreference-ril \
+	libril \
+	libsecril-client \
+	libsecril-client-sap \
+	android.hardware.radio@1.0 \
+	android.hardware.radio.deprecated@1.0 \
+	modemloader
+    
 
 PRODUCT_PACKAGES += \
     libsecril-client \
@@ -237,6 +254,7 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
+    keystore.exynos5 \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
 
@@ -254,8 +272,10 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
+    fingerprintd \
     fingerprint.exynos5 \
     libbauthtzcommon_shim \
+    android.hardware.biometrics.fingerprint@2.1-impl \
     android.hardware.biometrics.fingerprint@2.1-service
 
 # Offmode charger
@@ -265,7 +285,8 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service \
+    android.hardware.usb@1.0-impl \
+    android.hardware.usb@1.0-service
 
 # Network
 PRODUCT_PACKAGES += \
