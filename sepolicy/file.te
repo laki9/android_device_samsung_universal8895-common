@@ -31,3 +31,4 @@ type sysfs_camera_writable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_gps, fs_type, sysfs_type, mlstrustedobject;
 
 allow sysfs_type tmpfs:filesystem associate;
+type nv_log_efs_file, file_type;
