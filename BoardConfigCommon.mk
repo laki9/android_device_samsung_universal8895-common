@@ -48,6 +48,11 @@ ENABLE_CPUSETS := true
 # Binder
 TARGET_USES_64_BIT_BINDER := true
 
+#
+# Debugging
+#
+TARGET_BUILD_DEBUGGABLE := true
+
 # Extracted with libbootimg
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_KERNEL_BASE := 0x10000000
