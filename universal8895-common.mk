@@ -129,6 +129,7 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
 # Fingerprint
+PRODUCT_PACKAGES += \
     fingerprint.exynos5 \
     libbauthserver_shim \
     android.hardware.biometrics.fingerprint@2.1-impl \
