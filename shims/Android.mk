@@ -29,13 +29,3 @@ LOCAL_SRC_FILES := get_process_name.cpp
 LOCAL_MODULE := process_name
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := \
-    libbauthtzcommon.c
-LOCAL_SHARED_LIBRARIES := liblog
-LOCAL_MODULE := libbauthtzcommon_shim
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_SHARED_LIBRARY)
