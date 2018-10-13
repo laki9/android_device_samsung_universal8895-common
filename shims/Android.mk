@@ -17,15 +17,3 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
-
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := process_info.c
-LOCAL_MODULE := libprocname
-LOCAL_MODULE_TAGS := optional
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := get_process_name.cpp
-LOCAL_MODULE := process_name
-LOCAL_MODULE_TAGS := optional
-include $(BUILD_SHARED_LIBRARY)
