@@ -114,6 +114,11 @@ TARGET_USES_GRALLOC1_ADAPTER := true
 # ION
 TARGET_USES_ION := true
 
+# Graphics SHIMS
+TARGET_LD_SHIM_LIBS += \
+	/system/vendor/lib/egl/libGLES_mali.so|/vendor/lib/egl/get_process_name.so \
+	/system/vendor/lib64/egl/libGLES_mali.so|/vendor/lib64/egl/get_process_name.so
+
 # GPS-shims
 TARGET_LD_SHIM_LIBS += \
 	/system/bin/gpsd|/vendor/lib64/gpsd_shim.so
