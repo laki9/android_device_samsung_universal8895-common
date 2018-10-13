@@ -296,9 +296,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false 
 
-# stuff
+# SHIMS
 PRODUCT_PACKAGES += \
-	libprocname
+	libprocess
 
 # System properties
 include $(LOCAL_PATH)/system_prop.mk
