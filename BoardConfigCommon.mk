@@ -230,6 +230,13 @@ TARGET_LD_SHIM_LIBS += \
 # Fingerprint-shims
 TARGET_LD_SHIM_LIBS += \
        /system/lib64/libbauthserver.so|/system/lib64/libbauthserver_shim.so
+       
+# Process Info
+TARGET_LD_SHIM_LIBS += \
+	/system/lib/libmediadrm.so|/system/lib/libprocess.so \
+	/system/lib64/libmediadrm.so|/system/lib64/libprocess.so
+	
+	
 
 # TWRP
 ifeq ($(RECOVERY_VARIANT),twrp)
