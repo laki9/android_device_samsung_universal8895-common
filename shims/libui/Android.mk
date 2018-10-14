@@ -48,6 +48,6 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := process_info.c
-LOCAL_MODULE := libprocinfo
+LOCAL_MODULE := libprocess_shim
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)

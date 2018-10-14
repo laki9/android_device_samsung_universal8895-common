@@ -301,7 +301,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # SHIMS
 PRODUCT_PACKAGES += \
 	libprocname \
-	libprocinfo
+	libprocess_shim
 
 # System properties
 include $(LOCAL_PATH)/system_prop.mk
