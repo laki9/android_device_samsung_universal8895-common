@@ -13,7 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- static const char* process_name = "unknown";
- const char* get_process_name(void) {
-    return process_name;
+
+#include <hardware/hardware.h>
+
+static const char* process_name = "system_server";
+extern "C" const char*
+get_process_name(void) {
+  return process_name;
 }

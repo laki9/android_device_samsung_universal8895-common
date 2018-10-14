@@ -40,13 +40,14 @@ LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := get_process_name.c
-LOCAL_MODULE := get_process_name
+LOCAL_SHARED_LIBRARIES := libhardware
+LOCAL_SRC_FILES := process_name.cpp
+LOCAL_MODULE := libprocname
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := process_info.c
-LOCAL_MODULE := libprocess
+LOCAL_MODULE := libprocinfo
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
