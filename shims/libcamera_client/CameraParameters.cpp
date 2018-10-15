@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 TeamNexus
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-#include "libexynoscamera.h"
+#include "CameraParameters.h"
 
-namespace android
-{
-	
+namespace android {
+
 const char CameraParameters::PIXEL_FORMAT_YUV420SP_NV21[] = "nv21";
 const char CameraParameters::EFFECT_CARTOONIZE[] = "cartoonize";
 const char CameraParameters::EFFECT_POINT_RED_YELLOW[] = "point-red-yellow";
@@ -49,5 +48,5 @@ const char CameraParameters::KEY_SUPPORTED_PHASE_AF[] = "phase-af-values";
 const char CameraParameters::KEY_PHASE_AF[] = "phase-af";
 const char CameraParameters::KEY_SUPPORTED_RT_HDR[] = "rt-hdr-values";
 const char CameraParameters::KEY_RT_HDR[] = "rt-hdr";
-	
-};
+
+}; // namespace android

@@ -16,38 +16,10 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
+LOCAL_SRC_FILES := CameraParameters.cpp
 
-LOCAL_SRC_FILES := \
-    GraphicBufferMapper.cpp
-
-LOCAL_SHARED_LIBRARIES := \
-    libbase \
-    libcutils \
-    libhardware \
-    liblog \
-    libnativewindow \
-    libsync \
-    libui
-
-LOCAL_STATIC_LIBRARIES := \
-    libarect
-
-LOCAL_MODULE := libui_shim
+LOCAL_MODULE := libcamera_client_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_VENDOR_MODULE := true
 
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_SHARED_LIBRARIES := libhardware
-LOCAL_SRC_FILES := process_name.cpp
-LOCAL_MODULE := libprocname
-LOCAL_MODULE_TAGS := optional
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := process_info.c
-LOCAL_MODULE := libprocess_shim
-LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)

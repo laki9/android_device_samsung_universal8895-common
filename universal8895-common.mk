@@ -93,18 +93,12 @@ PRODUCT_PACKAGES += \
     libion_exynos \
     libfimg \
     android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.configstore@1.0-service \
+    android.hardware.renderscript@1.0-impl \
     android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
+    memtrack.exynos5 \
     libhwc2on1adapter
-
-# RenderScript HAL
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
 
 # hardware/samsung/AdvancedDisplay (MDNIE)
 #PRODUCT_PACKAGES += \
@@ -112,13 +106,12 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service 
+    android.hardware.drm@1.0-impl
 
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service
+    android.hardware.vibrator@1.0-impl
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -133,25 +126,22 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprint.exynos5 \
-    libbauthserver_shim \
-    android.hardware.biometrics.fingerprint@2.1-impl \
+    libbauthtzcommon_shim \
     android.hardware.biometrics.fingerprint@2.1-service
 
 PRODUCT_PACKAGES += \
+    libril
     libsecril-client \
     libsecril-client-sap \
     modemloader \
     android.hardware.radio@1.0 \
     android.hardware.radio.deprecated@1.0 \
+    rild
 
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl.exynos8895 \
-    android.hardware.gnss@1.0-service
-
-# GPS SHIM
-PRODUCT_PACKAGES += \
-    gpsd_shim
+    android.hardware.gnss@1.0-impl
 
 PRODUCT_PACKAGES += \
     SamsungServiceMode
@@ -166,6 +156,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	camera.exynos5 \
 	libexynoscamera_shim \
+	libstagefright_shim \
+	libcamera_client_shim \
 	camera.device@3.2-impl \
 	camera.device@1.0-impl \
 	android.hardware.camera.provider@2.4-impl
@@ -182,6 +174,8 @@ PRODUCT_PACKAGES += \
     wificond \
     wifilogd \
     wlutil \
+    libqsap_sdk \
+    libQWiFiSoftApCfg \
     libwpa_client \
     wpa_supplicant \
     android.hardware.wifi@1.0-service \
@@ -202,8 +196,7 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     NfcNci \
     Tag \
-    android.hardware.nfc@1.0-impl \
-    android.hardware.nfc@1.0-service 
+    android.hardware.nfc@1.0-impl
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -223,8 +216,7 @@ PRODUCT_PACKAGES += \
     audio.primary.universal8895 \
     libtinycompress \
     android.hardware.audio@2.0-impl \
-    android.hardware.audio@2.0-service \
-    android.hardware.audio.effect@2.0-impl 
+    android.hardware.audio.effect@2.0-impl
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -251,44 +243,27 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
+    keystore.exynos5 \
+    android.hardware.keymaster@3.0-impl
 
 # Power
 PRODUCT_PACKAGES += \
     power.universal8895 \
-    android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service \
-
-# OpenMAX-shims
-PRODUCT_PACKAGES += \
-    libui_shim \
-    libExynosOMX_shim
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc
+    android.hardware.power@1.0-impl
 
 # Lights
 PRODUCT_PACKAGES += \
     lights.universal8895 \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service
+    android.hardware.light@2.0-impl
 
 # Offmode charger
 PRODUCT_PACKAGES += \
     charger_res_images \
     lineage_charger_res_images
 
-# Stagefright-shims
-PRODUCT_PACKAGES += \
-	libstagefright_shim
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/mediaserver.rc:system/etc/init/mediaserver.rc
-
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service \
+    android.hardware.usb@1.0-service
 
 # Network
 PRODUCT_PACKAGES += \
@@ -298,10 +273,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.media.treble_omx=false 
 
-# SHIMS
-PRODUCT_PACKAGES += \
-	libprocname \
-	libprocess_shim
 
 # System properties
 include $(LOCAL_PATH)/system_prop.mk

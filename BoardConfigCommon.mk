@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -101,11 +101,6 @@ BOARD_HARDWARE_CLASS += hardware/samsung/lineagehw
 # Samsung Camera
 BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 
-# Camera-shims
-TARGET_LD_SHIM_LIBS += \
-	/system/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
-	/system/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so
-
 # Graphics
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -113,10 +108,6 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_GRALLOC1_ADAPTER := true
 # ION
 TARGET_USES_ION := true
-
-# GPS-shims
-TARGET_LD_SHIM_LIBS += \
-	/system/bin/gpsd|/vendor/lib64/gpsd_shim.so
 
 # Renderscript
 BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53.a57
@@ -197,41 +188,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 # Recovery
 #RECOVERY_VARIANT := twrp
 BOARD_HAS_DOWNLOAD_MODE := true
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.samsungexynos8895
-
-# OpenMAX-shims
-TARGET_LD_SHIM_LIBS += \
-	/system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.AVC.Decoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.AVC.Encoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.AVC.Encoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.HEVC.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.HEVC.Decoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.HEVC.Encoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.HEVC.Encoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.MPEG4.Decoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.MPEG4.Encoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.VP8.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.VP8.Decoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.VP8.Encoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.VP8.Encoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.VP9.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.VP9.Decoder.so|/vendor/lib64/libui_shim.so \
-	/system/lib/omx/libOMX.Exynos.WMV.Decoder.so|/vendor/lib/libui_shim.so \
-	/system/lib64/omx/libOMX.Exynos.WMV.Decoder.so|/vendor/lib64/libui_shim.so
-
-# Fingerprint-shims
-TARGET_LD_SHIM_LIBS += \
-       /system/lib64/libbauthserver.so|/system/lib64/libbauthserver_shim.so
-       
-# Process Info
-TARGET_LD_SHIM_LIBS += \
-	/system/lib/libmediadrm.so|/system/lib/libprocess.so \
-	/system/lib64/libmediadrm.so|/system/lib64/libprocess.so
-	
-	
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.samsungexynos8895	
 
 # TWRP
 ifeq ($(RECOVERY_VARIANT),twrp)
@@ -272,3 +229,11 @@ BOARD_SECCOMP_POLICY += $(LOCAL_PATH)/seccomp
 
 # SELinux
 BOARD_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
+
+# SHIMS
+TARGET_LD_SHIM_LIBS := \
+    /system/lib64/libbauthserver.so|libbauthtzcommon_shim.so \
+    /system/lib/libcamera_client.so|libcamera_client_shim.so \
+    /system/lib/libexynoscamera.so|libexynoscamera_shim.so \
+    /system/lib64/libstagefright.so|libstagefright_shim.so \
+    /system/lib/libstagefright.so|libstagefright_shim.so
