@@ -12,8 +12,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
 LOCAL_PATH := $(call my-dir)
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
+include $(CLEAR_VARS)
+LOCAL_SHARED_LIBRARIES := libhardware
+LOCAL_SRC_FILES := process_name.cpp
+LOCAL_MODULE := libprocname
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)

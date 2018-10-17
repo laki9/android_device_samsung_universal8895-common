@@ -98,7 +98,8 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl \
     android.hardware.memtrack@1.0-impl \
     memtrack.exynos5 \
-    libhwc2on1adapter
+    libhwc2on1adapter \
+    libprocname
 
 # hardware/samsung/AdvancedDisplay (MDNIE)
 #PRODUCT_PACKAGES += \
@@ -130,7 +131,7 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
 
 PRODUCT_PACKAGES += \
-    libril
+    libril \
     libsecril-client \
     libsecril-client-sap \
     modemloader \
