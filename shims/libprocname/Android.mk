@@ -20,4 +20,6 @@ LOCAL_SHARED_LIBRARIES := libhardware
 LOCAL_SRC_FILES := process_name.cpp
 LOCAL_MODULE := libprocname
 LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
+
 include $(BUILD_SHARED_LIBRARY)
