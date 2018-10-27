@@ -238,3 +238,27 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib64/libstagefright.so|libstagefright_shim.so \
     /system/lib/libstagefright.so|libstagefright_shim.so \
     /system/bin/gpsd|/vendor/lib64/libsensor_shim.so
+    
+    
+# OMX SHIMS
+TARGET_LD_SHIM_LIBS := \
+    /system/lib/omx/libOMX.Exynos.AVC.Decoder.so|/system/lib/libui_shim.so \
+    /system/lib64/omx/libOMX.Exynos.AVC.Decoder.so|/system/lib64/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.AVC.Encoder.so|/system/lib/libui_shim.so \
+    /system/lib64/omx/libOMX.Exynos.AVC.Encoder.so|/system/lib64/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.HEVC.Decoder.so|/system/lib/libui_shim.so \
+    /system/lib64/omx/libOMX.Exynos.HEVC.Decoder.so|/system/lib64/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.HEVC.Encoder.so|/system/lib/libui_shim.so \
+    /system/lib64/omx/libOMX.Exynos.HEVC.Encoder.so|/system/lib64/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|/system/lib/libui_shim.so \
+    /system/lib64/omx/libOMX.Exynos.MPEG4.Decoder.so|/system/lib64/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|/system/lib/libui_shim.so \
+    /system/lib64/omx/libOMX.Exynos.MPEG4.Encoder.so|/system/lib64/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.VP8.Decoder.so|/system/lib/libui_shim.so \
+    /system/lib64/omx/libOMX.Exynos.VP8.Decoder.so|/system/lib64/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.VP8.Encoder.so|/system/lib/libui_shim.so \
+    /system/lib64/omx/libOMX.Exynos.VP8.Encoder.so|/system/lib64/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.VP9.Decoder.so|/system/lib/libui_shim.so \
+    /system/lib64/omx/libOMX.Exynos.VP9.Decoder.so|/system/lib64/libui_shim.so \
+    /system/lib/omx/libOMX.Exynos.WMV.Decoder.so|/system/lib/libui_shim.so \
+    /system/lib64/omx/libOMX.Exynos.WMV.Decoder.so|/system/lib64/libui_shim.so
