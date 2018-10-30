@@ -95,7 +95,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.renderscript@1.0-impl \
     android.hardware.memtrack@1.0-impl \
@@ -139,8 +138,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fingerprint.exynos5 \
     libbauthtzcommon_shim \
-    android.hardware.biometrics.fingerprint@2.1-impl \
-    android.hardware.biometrics.fingerprint@2.1-service
+    android.hardware.biometrics.fingerprint@2.1-impl
 
 PRODUCT_PACKAGES += \
     libril \
@@ -171,11 +169,9 @@ PRODUCT_PACKAGES += \
 	camera.exynos5 \
 	libexynoscamera_shim \
 	libstagefright_shim \
-	libcamera_client_shim \
 	camera.device@3.2-impl \
 	camera.device@1.0-impl \
-	android.hardware.camera.provider@2.4-impl \
-	android.hardware.camera.provider@2.4-service
+	android.hardware.camera.provider@2.4-impl
 
 # WiFi
 PRODUCT_COPY_FILES += \
