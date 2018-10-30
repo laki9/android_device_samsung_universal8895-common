@@ -44,12 +44,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bq.gpu_to_cpu_unsupported=1 \
     ro.opengles.version=196610 \
     ro.sf.lcd_density=560 \
-    debug.hwc.force_gpu=1 \
-    ro.hardware.egl=mali
     
-# Hwc - not used on cm/aosp
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwc.winupdate=1 \
+# HWC
+debug.hwc.force_gpu=1
+ro.sf.disable_triple_buffer=0
 
 # Network
 # Define default initial receive window size in segments.
@@ -60,7 +58,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.port="I2C" \
     ro.nfc.sec_hal=true
-
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.add_power_save=1 \
