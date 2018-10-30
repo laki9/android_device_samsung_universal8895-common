@@ -237,7 +237,7 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib/libexynoscamera.so|libexynoscamera_shim.so \
     /system/lib64/libstagefright.so|libstagefright_shim.so \
     /system/lib/libstagefright.so|libstagefright_shim.so \
-    /system/bin/gpsd|/vendor/lib64/libsensor_shim.so
+    /system/bin/gpsd|/system/lib64/libsensor_shim.so
   
 # OMX SHIMS
 TARGET_LD_SHIM_LIBS := \

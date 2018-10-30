@@ -230,6 +230,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.r_submix.default \
     audio.primary.universal8895 \
+    tinymix \
     libtinycompress \
     android.hardware.audio@2.0-impl \
     android.hardware.audio@2.0-service \
