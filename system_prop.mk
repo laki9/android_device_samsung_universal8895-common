@@ -45,12 +45,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
     ro.sf.lcd_density=560 \
     debug.hwc.force_gpu=1 \
-	debug.hwui.use_buffer_age=false
-
+    ro.hardware.egl=mali
+    
 # Hwc - not used on cm/aosp
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwc.winupdate=1 \
-	debug.hwc.otf=1
 
 # Network
 # Define default initial receive window size in segments.
@@ -69,7 +68,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/lib64/libsec-ril.so \
     rild.libpath2=/system/lib64/libsec-ril-dsds.so \
     ro.telephony.default_network=9 \
-    ro.telephony.ril_class=SlteRIL \
     ro.ril.gprsclass=10 \
     ro.ril.hsxpa=1 \
     ro.ril.telephony.mqanelements=6 \
