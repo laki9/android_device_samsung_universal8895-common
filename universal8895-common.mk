@@ -30,6 +30,7 @@ PRODUCT_PACKAGES += \
     init.bluetooth.rc \
     init.gps.rc \
     init.power.rc \
+    init.recovery.usb.rc \
     init.rilchip.rc \
     init.rilcommon.rc \
     init.samsung.rc \
