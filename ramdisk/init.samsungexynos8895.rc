@@ -1741,6 +1741,10 @@ service watchdog_break /system/bin/watchdog_break.sh
 on property:ro.debuggable=1
     write /sys/module/kgdboc/parameters/kgdboc ttyFIQ1
     write /sys/module/fiq_debugger/parameters/kgdb_enable 1
+    
+on fs
+    wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
 
 on property:ro.bootmode=charger
     mount ext4 /dev/block/platform/11120000.ufs/by-name/SYSTEM /system wait ro
