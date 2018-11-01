@@ -5,7 +5,6 @@ import init.wifi.rc
 import init.gps.rc
 import init.samsung.rc
 import init.rilcommon.rc
-import init.power.rc
 
 on early-init
     mkdir /efs 0771 radio system
@@ -390,6 +389,7 @@ on boot
 
 # for BT MAC address
     mkdir /efs/bluetooth 0770 system bluetooth
+    
 # if already exist
     chown system bluetooth /efs/bluetooth
     chown system bluetooth /efs/bluetooth/bt_addr
@@ -507,8 +507,6 @@ on boot
 on fs
     mount_all /fstab.samsungexynos8895
     setprop ro.crypto.fuse_sdcard true
-    chown radio system /efs
-    restorecon_recursive /efs
 
 # Permissions for ION
     chmod 0660 /sys/class/ion_cma/ion_video_ext/isolated
@@ -596,12 +594,15 @@ on fs
 # DP AUX switch control for factory test
     chmod 0660 /sys/class/dp_sec/dp_sbu_sw_sel
     chown system system /sys/class/dp_sec/dp_sbu_sw_sel
+    
 # DP DEX control
     chmod 0660 /sys/class/dp_sec/dex
     chown system system /sys/class/dp_sec/dex
+    
 # DP AUX dev control
     chmod 0660 /dev/secdp_aux
     chown system system /dev/secdp_aux
+    
 # DP error info
     chmod 0660 /sys/class/dp_sec/dp_error_info
     chown system system /sys/class/dp_sec/dp_error_info
@@ -809,9 +810,11 @@ on fs
 service fuse_sdcard /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard /storage/sdcard
     class late_start
     disabled
+    
 service fuse_usb1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usb1 /storage/usb1
     class late_start
     disabled
+    
 service fuse_usb2 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usb2 /storage/usb2
     class late_start
     disabled
@@ -820,7 +823,7 @@ service fuse_usb2 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usb2 /stor
 service watchdogd /sbin/watchdogd 10 20
     class core
     seclabel u:r:watchdogd:s0
-
+    
 service watchdog_break /system/bin/watchdog_break.sh
     oneshot
     class core
@@ -834,40 +837,18 @@ on property:ro.debuggable=1
 on property:ro.bootmode=charger
     mount ext4 /dev/block/platform/11120000.ufs/by-name/SYSTEM /system wait ro
     wait /dev/block/platform/11120000.ufs/by-name/EFS
-    mount ext4 /dev/block/platform/11120000.ufs/by-name/EFS /efs nosuid nodev noatime noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic
-    class_start sec-charger
+    mount ext4 /dev/block/platform/11120000.ufs/by-name/EFS /efs nosuid nodev noatime noauto_da_alloc,discard,journal_async_commit,errors=panic
+    
 # umount service
 service umount_service /system/bin/umount -D /preload
     disabled
     seclabel u:r:umount_service:s0
     oneshot
-
-# Support Preload install apks
-#~ on property:persist.sys.storage_preload=1
-    #~ mount ext4 /dev/block/platform/11120000.ufs/by-name/HIDDEN /preload nosuid nodev ro barrier=1
-    #~ setprop storage.preload.complete 1
-
-#~ on property:persist.sys.storage_preload=0
-    #~ start umount_service
-
-# WSM service startup
-#~ service wsmd /system/bin/wsmd
-    #~ class core
-    #~ user system
-    #~ group system
-    #~ disabled
-#~ on property:ro.wsmd.enable=true
-    #~ mkdir /dev/socket/wsm_socket
-    #~ chmod 0711 /dev/socket/wsm_socket
-    #~ chown system system /dev/socket/wsm_socket
-    #~ start wsmd
-
-#~ service prepare_param /system/bin/prepare_param.sh /dev/block/platform/11120000.ufs/by-name/PARAM
-    #~ class core
-    #~ user root
-    #~ group root
-    #~ seclabel u:r:prepare_param:s0
-    #~ oneshot
+    
+service battery_charger /sbin/healthd -c
+    class charger
+    critical
+    seclabel u:r:healthd:s0
 
 # sem_daemon
 service sem_daemon /system/bin/sem_daemon
@@ -875,6 +856,10 @@ service sem_daemon /system/bin/sem_daemon
     user system
     group system nfc
     disabled
+    
+# sem_daemon permission
+    chown system system /efs/sec_efs/ssp_data
+    chmod 0644 /efs/sec_efs/ssp_data 
 
 on property:sys.mobicoredaemon.enable=true
 	write /proc/iccc_ready 1
@@ -894,15 +879,16 @@ service faced /system/bin/faced
 on property:sys.boot_completed=1
     setprop security.semdaemonfinish 0
     start sem_daemon
+    
+    on property:security.semdaemonfinish=1
+    stop sem_daemon
+    
     # Change permission for A-Box firmware logs file & GPR dump
     chown audioserver system /sys/kernel/debug/abox/log-00
     chown audioserver system /sys/devices/platform/13e50000.abox/13e50000.abox:abox_debug@0/gpr
     chown audioserver system /sys/devices/platform/13e50000.abox/13e50000.abox:abox_debug@0/calliope_sram
     chown audioserver system /sys/devices/platform/13e50000.abox/13e50000.abox:abox_debug@0/calliope_dram
     chown audioserver system /sys/devices/platform/13e50000.abox/13e50000.abox:abox_debug@0/calliope_iva
-
-on property:security.semdaemonfinish=1
-    stop sem_daemon
 
 # SSWAP
 service swapon /sbin/sswap -s -f 2048
